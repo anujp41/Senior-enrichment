@@ -1,18 +1,18 @@
 const router = require('express').Router();
-const {Campus} = require('../db/models');
+const {Student, Campus} = require('../db/models');
 
 module.exports = router;
 
 //GET api/campuses channel
 router.get('/', function(req, res, next) {
-    Campus.findAll()
+    Campus.findAll({include: Student, order: ['id']})
         .then(campuses => res.json(campuses))
         .catch(next);
 })
 
 //GET a particular campus by Id
 router.get('/:campusId', function(req, res, next) {
-    Campus.findById(req.params.campusId)
+    Campus.findById(req.params.campusId, {include: Student})
         .then(campus => res.json(campus))
         .catch(next);
 })

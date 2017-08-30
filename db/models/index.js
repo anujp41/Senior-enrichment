@@ -21,11 +21,10 @@ const images = [
     'http://2.bp.blogspot.com/_96EfIM01h70/TU00ARY1NvI/AAAAAAAABCQ/vCSEzBK7wCY/s1600/nebula.jpg'
 ]
 
+const randomImage = () => images[Math.floor(Math.random() * images.length)];
+
 const returnImage = (images) => {
-    var i = 0;
-    const image = images[i];
-    i++;
-    return image;
+    return randomImage();
 }
 
 const Campus = db.define('campus', {
@@ -35,16 +34,17 @@ const Campus = db.define('campus', {
   },
   image: {
       type: Sequelize.STRING,
-//      set(val) {
-//      return returnImage(images);
-//    }
       defaultValue: function() {
           return returnImage(images);
       }
   }
 });
 
-Campus.hasMany(Student);
+Campus.hasMany(Student, {
+    onDelete: 'cascade',
+    hooks: true
+});
+
 Student.belongsTo(Campus);
 
 module.exports = {

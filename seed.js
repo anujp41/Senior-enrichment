@@ -1,67 +1,65 @@
 const db = require('./db');
 const {Campus} = require('./db/models/');
-const Student = require('./db/models/student');
+const {Student} = require('./db/models');
 
 const campuses = [{
-  name: 'Quirinus',
-//  image: '/images/quirinus.jpg'
+  name: 'Quirinus Brainery'
 }, {
-  name: 'Minerva',
-//  image: '/images/minerva.jpg'
+  name: 'Minerva Preparatory School'
 }, {
-  name: 'Vesta',
-//  image: '/images/vesta.jpg'
+  name: 'Vesta Lyceum'
 }, {
-  name: 'Carmenta',
-//  image: '/images/carmenta.jpg'
+  name: 'Carmenta Finishing School'
+}, {
+  name: 'Institute of Magrathea'
 }];
 
 const students = [{
-  name: 'Ourea',
+  name: 'Ourea Popplewell',
   email: 'ouera@gmail.com',
   campusId: '1'
 }, {
-  name: 'Artemis',
+  name: 'Artemis Montjoy',
   email: 'artemis@gmail.com',
   campusId: '2'
 }, {
-  name: 'Athena',
+  name: 'Athena Scrivener',
   email: 'athena@gmail.com',
   campusId: '3'
 }, {
-  name: 'Dionysus',
+  name: 'Dionysus Bickford-Smith',
   email: 'dionysus@gmail.com',
   campusId: '4'
 }, {
-  name: 'Hades',
+  name: 'Hades Luckinbill',
   email: 'hades@gmail.com',
   campusId: '1'
 }, {
-  name: 'Hephaestus',
+  name: 'Hephaestus Luckinbill',
   email: 'hephaestus@gmail.com',
   campusId: '2'
 }, {
-  name: 'Hera',
+  name: 'Hera Luckinbill',
   email: 'hera@gmail.com',
   campusId: '3'
 }, {
-  name: 'Hermes',
+  name: 'Hermes Luckinbill',
   email: 'hermes@gmail.com',
   campusId: '4'
 }, {
-  name: 'Hestia',
+  name: 'Hestia Trickelbank',
   email: 'hestia@gmail.com',
   campusId: '1'
 }, {
-  name: 'Metis',
+  name: 'Metis Altringham',
   email: 'metis@gmail.com',
   campusId: '2'
 }, {
-  name: 'Aion',
+  name: 'Aion Slaymaker',
   email: 'aion@gmail.com',
   campusId: '3'
 }, {
-  name: 'Hemera',
+  name: 'Hemera Honeybun',
   email: 'hemera@gmail.com',
   campusId: '4'
 }];
