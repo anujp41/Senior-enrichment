@@ -1,7 +1,17 @@
 body {
     background-image: url("https://s-media-cache-ak0.pinimg.com/originals/b3/50/db/b350db88149ab6acaf18265f8413a87f.jpg");
-    overflow: auto
 }
+
+.mainTable {
+    z-index: -1
+}
+
+tr:after {
+            content: ' ';
+            display: block;
+            visibility: hidden;
+            clear: both;
+        }
 
 .mainBody {
     padding-top: 125px;
@@ -159,4 +169,12 @@ div.col-xs-2 h4 {
 
 button:hover {
     box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.campusEdit {
+    border-style: dashed;
+    color: aquamarine;
+    float: right;
+    width: 15%;
+    margin-top: 150px
 }

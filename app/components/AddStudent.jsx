@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Redirect } from 'react-router'
+import { Redirect } from 'react-router';
 import axios from 'axios';
 
 export default class AddStudent extends Component {
@@ -46,7 +46,7 @@ export default class AddStudent extends Component {
         const campuses = this.state.campuses;
         const redirect = this.state.redirectToHome;
         return (
-            <section>
+            <section className="editBody">
                 { redirect && <Redirect to={`/campus/${this.state.campusId}`} />}
                 <h1>Please enter the information for the new student!</h1>
                 <h3>Note that all fields are required to create a new student</h3>

@@ -6,7 +6,7 @@ export default class Navbar extends Component {
         return (
             <nav className="navbar">
                 <Link className="btn btn-success" to="/students">Students</Link>
-                <Link className="btn btn-success" to="/">Home</Link>
+                <Link className="btn btn-success" to="/">Colleges</Link>
                 <img className="navImage" src="https://pi.tedcdn.com/r/pf.tedcdn.com/images/playlists/way_out_there_1999858112.jpg"></img>
                 <h1>School of Thoth</h1>
                 <Link className="btn btn-info" to="/students/add">Add Student</Link>

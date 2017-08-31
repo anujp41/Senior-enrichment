@@ -19,7 +19,6 @@ export default class Student extends Component {
     
     removeStudent(event) {
         const studentId = event;
-        
             axios.delete(`/api/students/${studentId}`)
             .then(() => axios.get(`/api/students`))
             .then(res => res.data)
@@ -30,7 +29,7 @@ export default class Student extends Component {
     render() {
         const students = this.state.students;
         return (
-            <section className="studentBody">
+            <section className="studentBody mainTable">
                 <h1>List of all students</h1>
                 <section className="table table-striped">
                     <thead>

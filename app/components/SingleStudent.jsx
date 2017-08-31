@@ -27,7 +27,8 @@ export default class SingleStudent extends Component {
                 {studentInfo.campus && 
                     <div className="studentBody">
                          <h1  style={{margin: '10px 0 15px 0'}}> Welcome to student page for</h1><h1>{studentInfo.name}</h1>
-                         <h3> This student studies at {studentInfo.campus.name}</h3>
+                         <h3> This student studies at 
+                             <Link to={`/campus/${studentInfo.campus.id}`}> {studentInfo.campus.name}</Link></h3>
                          <h3> The email address for the student is {studentInfo.email}</h3>
                          <h3> The student was addmitted to our Academy on {studentInfo.createdAt.slice(0,10)} and has been studying at the current school since {
                                  (studentInfo.createdAt.slice(0,10) === studentInfo.updatedAt.slice(0,10) ) 
