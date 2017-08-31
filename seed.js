@@ -11,7 +11,7 @@ const campuses = [{
 }, {
   name: 'Carmenta Finishing School'
 }, {
-  name: 'Institute of Magrathea'
+  name: 'Magrathea Academy'
 }];
 
 const students = [{
@@ -31,15 +31,15 @@ const students = [{
   email: 'dionysus@gmail.com',
   campusId: '4'
 }, {
-  name: 'Hades Luckinbill',
+  name: 'Hades Gruger',
   email: 'hades@gmail.com',
   campusId: '1'
 }, {
-  name: 'Hephaestus Luckinbill',
+  name: 'Hephaestus Portendorfer',
   email: 'hephaestus@gmail.com',
   campusId: '2'
 }, {
-  name: 'Hera Luckinbill',
+  name: 'Hera Febland',
   email: 'hera@gmail.com',
   campusId: '3'
 }, {

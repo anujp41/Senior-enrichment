@@ -1,0 +1,81 @@
+/*
+body {
+    background-image: url("https://s-media-cache-ak0.pinimg.com/originals/b3/50/db/b350db88149ab6acaf18265f8413a87f.jpg")
+}
+*/
+
+.mainBody {
+    padding-top: 125px;
+    padding-bottom: 25px
+}
+.mainBody img {
+    height: 15vh
+}
+
+.thisFooter {
+    opacity: 0.75;
+    position: fixed;
+    bottom: 0px;
+    height: 5vh;
+    width: 100vw;
+    text-align: center;
+    font-family: 'Pacifico', cursive;
+    background-color: coral;
+    line-height: 35px
+}
+
+.navbar {
+    position: fixed;
+    width: 100vw;
+    height: 110px;
+    background-color: coral;
+    font-family: 'Alfa Slab One', cursive;
+}
+
+.navbar .btn {
+    display: inline;
+    min-width: 10%;
+    text-align: center;
+    margin-right: 25px;
+    float: right
+}
+
+.navbar h3 {
+    margin-top: 5px;
+}
+
+.navImage {
+    display: inline;
+    float: left;
+    white-space: normal;
+    margin: 5px 10px 5px 5px;
+    height: 100px;
+    width: 8vw
+}
+
+.mainBody h4{
+    color: black
+}
+
+.btn {
+    margin-left: 10px;
+}
+
+.formBottom {
+    position: fixed;
+    bottom: 55px;
+    height: 5vh;
+    width: 100vw;
+}
+
+.formName {
+    font-family: 'Pacifico', cursive;
+    color: darkred;
+    font-size: 150%
+}
+
+.btn-success {
+    float: right;
+    top: 50px;
+    display: inline
+}

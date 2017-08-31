@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import SingleCampus from './SingleCampus.jsx';
+import AddStudent from './AddStudent.jsx';
 
 export default class Campus extends Component {
     
@@ -25,7 +26,8 @@ export default class Campus extends Component {
             <section className="container">
                 <h1>{this.state.campuses.name}</h1>
                 {students && 
-                    <div className="table table-bordered">
+                    <section className="table table-striped">
+                        <AddStudent campus={this.state.campuses} />
                         <thead>
                             <tr>
                                 <th>Name</th>
@@ -40,7 +42,7 @@ export default class Campus extends Component {
                             </tr>
                         ))}
                         </tbody>
-                 </div>
+                 </section>
                 }
             </section>
         )

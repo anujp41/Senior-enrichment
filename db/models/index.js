@@ -41,6 +41,7 @@ const Campus = db.define('campus', {
 });
 
 Campus.hasMany(Student, {
+    foreignKey: {allowNull: false},
     onDelete: 'cascade',
     hooks: true
 });

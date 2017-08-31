@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+import AddCollege from './AddCollege.jsx';
 
 export default class Home extends Component {
     
@@ -9,6 +10,7 @@ export default class Home extends Component {
         this.state = {
             campuses: {}
         }
+        this.removeCollege = this.removeCollege.bind(this);
     }
     
     componentDidMount() {
@@ -17,21 +19,42 @@ export default class Home extends Component {
         .then(campuses => this.setState({campuses}))
     }
     
+    removeCollege(event) {
+        const campusId = event;
+        axios.delete(`/api/campuses/${campusId}`)
+        .then(() => axios.get(`/api/campuses`))
+        .then(res => res.data)
+        .then(campuses => this.setState({campuses}))
+        .catch(console.error)
+    }
+    
+    addCollege(name) {
+        axios.post(`/api/campuses`, { name })
+        .then(() => axios.get(`api/campuses`))
+        .then(res => res.data)
+        .then(newCampus => {
+            this.setState({
+                campuses: 
+            })
+        })
+    }
+    
     render() {
         const campuses = this.state.campuses;
         return (
             <section>
                 {
                     campuses.length && campuses.map(campus => (
-                            <div key={campus.id}>
-                                <h4><Link to={`/campus/${campus.id}`}>{campus.name}</Link></h4>
-                                <img src={campus.image} />
-                            </div>
+                        <div className="col-xs-3 subBody" key={campus.id}>
+                            <h4><Link to={`/campus/${campus.id}`}>{campus.name}</Link></h4>
+                            <img src={campus.image} />
+                            <button className="btn btn-danger" onClick={() => this.removeCollege(campus.id)}>Remove College?</button>
+                        </div>
                         )
                     )
                 }
+                <AddCollege />
             </section>
         )
     }
 }
-
