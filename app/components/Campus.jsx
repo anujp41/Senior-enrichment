@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import SingleCampus from './SingleCampus.jsx';
 import AddStudent from './AddStudent.jsx';
+import { Link } from 'react-router-dom';
 
 export default class Campus extends Component {
     
@@ -23,11 +24,14 @@ export default class Campus extends Component {
     render() {
         const students = this.state.campuses.students;
         return (
-            <section className="container">
+            <section className="container studentBody">
                 <h1>{this.state.campuses.name}</h1>
                 {students && 
                     <section className="table table-striped">
-                        <AddStudent campus={this.state.campuses} />
+                        <colgroup>
+                            <col class="col-lg-6" />
+                            <col class="col-lg-6" />
+                        </colgroup>
                         <thead>
                             <tr>
                                 <th>Name</th>
@@ -37,7 +41,7 @@ export default class Campus extends Component {
                         <tbody>
                     {students.map(student => (
                             <tr key={student.id}>
-                                <td>{student.name}</td>
+                                    <td><Link to={`/student/${student.id}`}>{student.name}</Link></td>
                                 <td>{student.email}</td>
                             </tr>
                         ))}

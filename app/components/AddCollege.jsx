@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import axios from 'axios';
 
 export default class AddCollege extends Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.state = {
             inputName: ''
         }
@@ -20,11 +20,8 @@ export default class AddCollege extends Component {
     handleSubmit(event) {
         event.preventDefault();
         const name = this.state.inputName;
-        axios.post(`/api/campuses`, { name })
-        .then(() => axios.get(`api/campuses`))
-        .then(res => res.data)
-        .then(campuses => console.log('CAMPUSES ', campuses))
-        this.setState({inputName:''})
+        this.props.addCollege(name);
+        this.setState({inputName: ''})
     }
     
     render() {
@@ -33,16 +30,16 @@ export default class AddCollege extends Component {
               <form 
                   className="form-group formBottom"
                   onSubmit={this.handleSubmit}>
-                    <label for="inputName" className="formName">Please Enter College Name Below To Add</label>
+                    <label for="inputName" className="formName"></label>
                   <button
                     type="submit"
                     className="btn btn-success">
-                    Add College
+                    Add
                   </button>
                   <input
                     value={this.state.inputName}
                     className="form-control"
-                    placeholder="Please enter college name herein if you wish to add to list of colleges!"
+                    placeholder="Please type college name herein if you wish to add to list of colleges. Press add button to the right to enter!"
                     onChange={this.handleChange}
                   />
                 </form>

@@ -5,11 +5,11 @@ const {Student} = require('./db/models');
 const campuses = [{
   name: 'Quirinus Brainery'
 }, {
-  name: 'Minerva Preparatory School'
+  name: 'Minerva Preparatory'
 }, {
   name: 'Vesta Lyceum'
 }, {
-  name: 'Carmenta Finishing School'
+  name: 'Carmenta Finishing'
 }, {
   name: 'Magrathea Academy'
 }];

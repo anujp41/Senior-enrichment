@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import axios from 'axios';
 
 export default class Student extends Component {
@@ -29,7 +30,7 @@ export default class Student extends Component {
     render() {
         const students = this.state.students;
         return (
-            <section>
+            <section className="studentBody">
                 <h1>List of all students</h1>
                 <section className="table table-striped">
                     <thead>
@@ -43,7 +44,7 @@ export default class Student extends Component {
                     <tbody>
                 { students.length && students.map(student => (
                         <tr key={student.id}>
-                            <td>{student.name}</td>
+                            <td><Link to={`/student/${student.id}`}>{student.name}</Link></td>
                             <td>{student.email}</td>
                             <td>{student.campus.name}</td>
                             <td><button type="button" className="btn btn-danger" onClick={() => this.removeStudent(student.id)}>X</button></td>

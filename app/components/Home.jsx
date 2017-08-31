@@ -8,9 +8,10 @@ export default class Home extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            campuses: {}
+            campuses: []
         }
         this.removeCollege = this.removeCollege.bind(this);
+        this.addCollege = this.addCollege.bind(this);
     }
     
     componentDidMount() {
@@ -30,11 +31,10 @@ export default class Home extends Component {
     
     addCollege(name) {
         axios.post(`/api/campuses`, { name })
-        .then(() => axios.get(`api/campuses`))
         .then(res => res.data)
         .then(newCampus => {
             this.setState({
-                campuses: 
+                campuses: [...this.state.campuses, newCampus]
             })
         })
     }
@@ -43,9 +43,10 @@ export default class Home extends Component {
         const campuses = this.state.campuses;
         return (
             <section>
+                <div  className="collegeList">
                 {
                     campuses.length && campuses.map(campus => (
-                        <div className="col-xs-3 subBody" key={campus.id}>
+                        <div className="col-xs-2 studentBody subBody" key={campus.id}>
                             <h4><Link to={`/campus/${campus.id}`}>{campus.name}</Link></h4>
                             <img src={campus.image} />
                             <button className="btn btn-danger" onClick={() => this.removeCollege(campus.id)}>Remove College?</button>
@@ -53,7 +54,8 @@ export default class Home extends Component {
                         )
                     )
                 }
-                <AddCollege />
+                </div>
+                <AddCollege addCollege={this.addCollege}/>
             </section>
         )
     }

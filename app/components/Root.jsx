@@ -6,6 +6,8 @@ import Student from './Student.jsx';
 import Navbar from './Navbar.jsx';
 import Footer from './Footer.jsx';
 import AddStudent from './AddStudent.jsx';
+import SingleStudent from './SingleStudent.jsx';
+import EditStudent from './EditStudent.jsx';
 
 export default class Root extends Component {
     
@@ -15,8 +17,10 @@ export default class Root extends Component {
                 <div>
                     <Navbar />
                     <div className="mainBody">
-                        <Route path='/campus/:campusId' component={Campus} />
+                        <Route exact path='/campus/:campusId' component={Campus} />
                         <Route exact path='/students/add' component={AddStudent} />
+                        <Route exact path='/student/:studentId' component={SingleStudent} />
+                        <Route exact path='/student/edit/:studentId' component={EditStudent} />
                         <Route exact path='/students' component={Student} />
                         <Route exact path='/' component={Home} />
                     </div>
