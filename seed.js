@@ -3,19 +3,14 @@ const {Campus} = require('./db/models/');
 const {Student} = require('./db/models');
 
 const campuses = [{
-  id: 1,    
   name: 'Quirinus Brainery'
 }, {
-  id: 2,
   name: 'Minerva Preparatory'
 }, {
-  id: 3,
   name: 'Vesta Lyceum'
 }, {
-  id: 4,
   name: 'Carmenta Finishing'
 }, {
-  id: 5,
   name: 'Magrathea Academy'
 }];
 
