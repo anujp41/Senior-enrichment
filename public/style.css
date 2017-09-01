@@ -107,7 +107,13 @@ body {
     font-family: 'Josefin Sans', sans-serif;
     font-weight: 100;
     font-size: 200%;
-    padding-left: 10%
+    padding-left: 3%
+}
+
+.studentBody .mug {
+    float: right;
+    margin-top: 50px;
+    margin-right: 50px;
 }
 
 .subBody h4 {
@@ -150,10 +156,6 @@ div.col-xs-2 h4 {
     width: 50vw;
     position: absolute;
     padding: 15px 5% 0 5%;
-/*
-    padding-top: 25px;
-    padding-right: 5%;
-*/
     left: 15%;
 }
 

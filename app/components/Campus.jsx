@@ -53,6 +53,7 @@ export default class Campus extends Component {
                             <thead>
                                 <tr>
                                     <th>Name</th>
+                                    <th>Student Photo</th>
                                     <th>Email</th>
                                     <th></th>
                                 </tr>
@@ -61,6 +62,7 @@ export default class Campus extends Component {
                         {students.map(student => (
                                 <tr key={student.id}>
                                     <td><Link to={`/student/${student.id}`}>{student.name}</Link></td>
+                                    <td><img src={`${student.image}`}/></td>
                                     <td>{student.email}</td>
                                     <td><button type="button" className="btn btn-danger" onClick={() => this.removeStudent(student.id)}>X</button></td>
                                 </tr>

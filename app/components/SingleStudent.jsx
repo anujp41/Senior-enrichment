@@ -26,7 +26,9 @@ export default class SingleStudent extends Component {
             <section className="container">
                 {studentInfo.campus && 
                     <div className="studentBody">
-                         <h1  style={{margin: '10px 0 15px 0'}}> Welcome to student page for</h1><h1>{studentInfo.name}</h1>
+                        <img className="mug" src={`${studentInfo.image}`}/> 
+                        <h1  style={{margin: '10px 0 15px 0'}}> Welcome to student page for</h1><h1>{studentInfo.name}</h1>
+                        
                          <h3> This student studies at 
                              <Link to={`/campus/${studentInfo.campus.id}`}> {studentInfo.campus.name}</Link></h3>
                          <h3> The email address for the student is {studentInfo.email}</h3>
@@ -37,8 +39,7 @@ export default class SingleStudent extends Component {
                                  :
                                      <h3  style={{display: 'inline'}}>{studentInfo.updatedAt.slice(0,10)}</h3>
                                  }
-                         </h3>
-                        
+                         </h3>                        
                         <div className="editBody">
                             <h1>Please press edit to update student information: 
                                 <button type="button" className="btn btn-success"><Link to={`/student/edit/${studentInfo.id}`}>Edit</Link></button>
