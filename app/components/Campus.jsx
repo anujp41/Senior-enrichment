@@ -36,8 +36,8 @@ export default class Campus extends Component {
     }
     
     editMode() {
-        this.setState({editMode: !(this.state.editMode)});
         this.componentDidMount();
+        this.setState({editMode: !(this.state.editMode)});
     }
     
     render() {
@@ -50,10 +50,6 @@ export default class Campus extends Component {
                     <h1>{this.state.campuses.name}</h1>
                     {students &&  
                         <section className="table table-striped">
-                            <colgroup>
-                                <col class="col-lg-6" />
-                                <col class="col-lg-6" />
-                            </colgroup>
                             <thead>
                                 <tr>
                                     <th>Name</th>

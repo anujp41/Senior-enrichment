@@ -4,7 +4,7 @@ export default class Footer extends Component {
     render() {
         return (
             <footer className="thisFooter">
-			 <div>Advisor long tail gen-z termsheet pivot.</div>
+			 <div>A building with four walls and your bright future inside!</div>
           </footer>
         )
     }
